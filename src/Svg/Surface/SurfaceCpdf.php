@@ -391,22 +391,17 @@ class SurfaceCpdf implements SurfaceInterface
         $opacity = $style->opacity;
         if ($opacity !== null && $opacity < 1.0) {
             $canvas->setLineTransparency("Normal", $opacity);
-            $canvas->currentLineTransparency = null;
-
             $canvas->setFillTransparency("Normal", $opacity);
-            $canvas->currentFillTransparency = null;
         }
         else {
             $fillOpacity = $style->fillOpacity;
             if ($fillOpacity !== null && $fillOpacity < 1.0) {
                 $canvas->setFillTransparency("Normal", $fillOpacity);
-                $canvas->currentFillTransparency = null;
             }
 
             $strokeOpacity = $style->strokeOpacity;
             if ($strokeOpacity !== null && $strokeOpacity < 1.0) {
                 $canvas->setLineTransparency("Normal", $strokeOpacity);
-                $canvas->currentLineTransparency = null;
             }
         }
 
